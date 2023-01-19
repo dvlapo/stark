@@ -1,0 +1,634 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+/* 
+    Andy Bell's CSS reset
+    https://piccalil.li/blog/a-modern-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+@font-face {
+  font-family: ArminGrotesk;
+  src: url("../assets/fonts/Fontspring-DEMO-armingrotesk-normal.otf");
+}
+@font-face {
+  font-family: ArminGrotesk;
+  src: url("../assets/fonts/Fontspring-DEMO-armingrotesk-black.otf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: ArminGrotesk;
+  src: url("../assets/fonts/Fontspring-DEMO-armingrotesk-semibold.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: ArminGrotesk;
+  src: url("../assets/fonts/Fontspring-DEMO-armingrotesk-regular.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: ArminGrotesk;
+  src: url("../assets/fonts/Fontspring-DEMO-armingrotesk-normal.otf");
+  font-weight: 400;
+}
+html,
+body {
+  font-family: "ArminGrotesk", sans-serif;
+  overflow-x: hidden;
+}
+
+.ff-roboto {
+  font-family: "Roboto mono", sans-serif;
+}
+
+:root {
+  --white: hsl(60, 38%, 94%);
+  --blue: hsl(248, 74%, 47%);
+  --yellow: hsl(47, 99%, 69%);
+  --dark-blue: hsl(216, 65%, 18%);
+  --gray: hsl(240, 2%, 30%);
+  --peach: hsl(2, 96%, 70%);
+}
+
+.btn {
+  padding: 0.375rem 1.5rem;
+  min-height: 2.75rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: 2px solid var(--border-color, transparent);
+  white-space: nowrap;
+}
+@media only screen and (max-width: 420px) {
+  .btn {
+    padding-inline: 1rem;
+  }
+}
+
+.btn--yellow {
+  color: var(--dark-blue);
+  background-color: var(--yellow);
+}
+
+.btn--yellow:hover {
+  opacity: 0.9;
+}
+
+.btn--transparent {
+  --border-color: var(--yellow);
+  color: var(--yellow);
+}
+
+.btn--transparent:is(:hover, :focus) {
+  color: var(--dark-blue);
+  background-color: var(--yellow);
+}
+
+.body-text {
+  font-size: 1.25rem;
+}
+
+.hero {
+  background-image: url(/assets/images/gradient-bg.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--blue);
+  min-height: 100vh;
+  color: var(--white);
+  overflow: hidden;
+  -webkit-animation: floatBg 10s ease infinite;
+          animation: floatBg 10s ease infinite;
+  will-change: background-position;
+}
+.hero .nav {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 2rem;
+  align-items: center;
+  width: min(1050px, 100vw);
+  margin-inline: auto;
+  background-color: hsl(248deg, 74%, 47%);
+}
+.hero .nav :is(ul.nav__links, ul.cta-container) {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.hero .nav:has(button[aria-expanded=true]) {
+  position: relative;
+  z-index: 30;
+}
+.hero .nav .cta-menu-button-container {
+  display: flex;
+  gap: 2rem;
+}
+.hero .nav .logo {
+  flex-shrink: 0;
+}
+.hero .nav a {
+  text-decoration: none;
+}
+.hero .nav a.cta {
+  background-color: var(--white);
+  color: var(--blue);
+  padding: 0.5em 1.5em;
+  border-radius: 0.5em;
+  white-space: nowrap;
+}
+.hero .nav :is(.drop-down span.nav__item, .nav__item) {
+  padding: 0.5em;
+  border: 2px solid transparent;
+  border-radius: 0.5em;
+  white-space: nowrap;
+  transition: border 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+.hero .nav :is(.drop-down span.nav__item, .nav__item):is(:focus, :hover) {
+  border-color: currentColor;
+}
+.hero .nav .drop-down span {
+  display: flex;
+  align-items: center;
+  gap: 0.1em;
+  cursor: pointer;
+}
+.hero .nav .drop-down {
+  position: relative;
+}
+.hero .nav .drop-down ul {
+  position: absolute;
+  top: 0;
+  color: var(--blue);
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  left: -16px;
+  opacity: 0;
+  padding: 8px 0;
+  pointer-events: none;
+  transition: all 0.2s ease 0.2s;
+  visibility: hidden;
+  width: 204px;
+  text-transform: none;
+  font-weight: 550;
+  font-size: 1rem;
+  letter-spacing: 0px;
+  z-index: 2;
+}
+.hero .nav .drop-down ul li {
+  padding-inline: 1rem;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  padding-block: 0.3em;
+  display: flex;
+  align-items: center;
+}
+.hero .nav .drop-down ul li span {
+  color: #194111;
+  background-color: #dbf4d7;
+  text-transform: uppercase;
+  padding: 0.2em 0.7em;
+  border-radius: 0.4em;
+  font-size: 0.8em;
+  font-weight: 800;
+  margin-left: auto;
+}
+.hero .nav .drop-down ul li:hover {
+  background-color: hsl(246deg, 63%, 97%);
+}
+.hero .nav .drop-down:is(:hover, :focus-within) ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.hero .nav .drop-down ion-icon {
+  scale: 0.8;
+}
+.hero .flex-container {
+  display: grid;
+  grid-template-columns: 1fr 650px;
+  padding-left: max(4vw, 16px);
+  margin-top: 2rem;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+.hero .flex-container > section {
+  padding-top: 1.5rem;
+  position: relative;
+}
+.hero .flex-container > section p.intro {
+  color: var(--yellow);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.hero .flex-container > section h1 {
+  font-size: 5.375rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 96px;
+  margin-block: 1rem;
+}
+.hero .flex-container > section p:not(.intro) {
+  font-weight: 500;
+}
+.hero .flex-container > div {
+  scale: 1.07;
+  transform-origin: left;
+}
+.hero .flex-container section .ctas {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  position: relative;
+}
+.hero .flex-container .hero-image-container {
+  position: relative;
+  min-width: 600px;
+  right: -0.5rem;
+}
+.hero .flex-container .hero-image-container .presentation {
+  position: absolute;
+}
+.hero .yellow-arrow {
+  width: 142px;
+  position: absolute;
+  top: -16px;
+  left: 442px;
+}
+
+.mobile-menu {
+  visibility: hidden;
+  display: none;
+  width: 100vw;
+  background-color: var(--white);
+  position: fixed;
+  top: 0;
+  z-index: 30;
+  padding: 0 2rem;
+  margin-top: 60px;
+  transform-origin: right;
+  transition: 0.3s ease-in;
+  transform: translateX(100%);
+  overflow-y: scroll;
+  color: hsl(248deg, 74%, 47%);
+  height: calc(100vh - 60px);
+}
+.mobile-menu * {
+  opacity: 0;
+  transition: opacity 1s;
+  transition-delay: 0.3s;
+}
+@media screen and (max-width: 894px) {
+  .mobile-menu {
+    opacity: 0;
+    visibility: visible;
+    display: block;
+  }
+}
+.mobile-menu.opened {
+  transform: translateX(0%);
+  opacity: 1;
+  padding-bottom: 200px;
+}
+.mobile-menu.opened * {
+  opacity: 1;
+}
+.mobile-menu a.main,
+.mobile-menu p.main {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 900;
+  line-height: 21px;
+  width: 100%;
+  display: block;
+  letter-spacing: 1px;
+}
+.mobile-menu p.main {
+  padding-block: 1.5rem 1rem;
+}
+.mobile-menu a.main {
+  padding-block: 1.5rem;
+  border-bottom: 1px solid #cbcbcd;
+}
+.mobile-menu ul {
+  border-left: 1px solid #cbcbcd;
+}
+.mobile-menu ul li {
+  padding-left: 16px;
+  font-weight: 600;
+  padding-block: 0.8rem;
+}
+
+@-webkit-keyframes floatBg {
+  0% {
+    background-position: 0 50px;
+  }
+  50% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 50px;
+  }
+}
+
+@keyframes floatBg {
+  0% {
+    background-position: 0 50px;
+  }
+  50% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 50px;
+  }
+}
+/* Mobile menu button */
+.mobile-menu-button {
+  display: none;
+  background-color: transparent;
+  border: none;
+  background: var(--white);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0.4em;
+  place-content: center;
+  cursor: pointer;
+}
+.mobile-menu-button span {
+  display: block;
+  height: 2px;
+  width: 18px;
+  background-color: var(--blue);
+}
+.mobile-menu-button span:nth-child(2) {
+  margin-block: 4px;
+}
+.mobile-menu-button .line {
+  transition: y 80ms ease-in 80ms, rotate 80ms ease-in, opacity 0ms 80ms;
+  transform-origin: center;
+}
+.mobile-menu-button[aria-expanded=true] .line {
+  transition: translate 80ms ease-in, rotate 80ms ease-in 80ms, opacity 0ms 80ms;
+}
+.mobile-menu-button[aria-expanded=true] :is(.top, .bottom) {
+  position: relative;
+}
+.mobile-menu-button[aria-expanded=true] .top {
+  rotate: 45deg;
+  translate: 0 6px;
+}
+.mobile-menu-button[aria-expanded=true] .middle {
+  opacity: 0;
+}
+.mobile-menu-button[aria-expanded=true] .bottom {
+  rotate: -45deg;
+  translate: 0 -6px;
+}
+
+.sparkle {
+  width: 35px;
+  top: 0;
+}
+
+.avatar-circle-one,
+.avatar-circle-two {
+  position: absolute;
+  opacity: 0.8;
+  -webkit-animation: spin 20s linear infinite;
+          animation: spin 20s linear infinite;
+}
+
+.avatar-circle-one {
+  top: 107px;
+  width: 172px;
+  right: 13px;
+}
+
+.avatar-circle-two {
+  top: 491px;
+  width: 144px;
+  left: 81px;
+}
+
+.contrast-bubble,
+.alttext-bubble,
+.focusorder-bubble {
+  width: 60px;
+  position: absolute;
+  z-index: 100;
+  opacity: 0;
+}
+
+.contrast-bubble {
+  top: 65px;
+  right: 70px;
+  -webkit-animation: pop 0.2s ease-in 9s forwards;
+          animation: pop 0.2s ease-in 9s forwards;
+  transform-origin: bottom left;
+}
+
+.alttext-bubble {
+  top: 475px;
+  left: 60px;
+  -webkit-animation: pop 0.2s ease-in 7s forwards;
+          animation: pop 0.2s ease-in 7s forwards;
+  transform-origin: bottom right;
+}
+
+.focusorder-bubble {
+  top: 445px;
+  right: 10px;
+  -webkit-animation: pop 0.2s ease-in 5s forwards;
+          animation: pop 0.2s ease-in 5s forwards;
+  transform-origin: bottom left;
+}
+
+@-webkit-keyframes pop {
+  0% {
+    opacity: 0;
+    scale: 0 0;
+  }
+  75% {
+    opacity: 1;
+    scale: 1.1 1.1;
+  }
+  100% {
+    opacity: 1;
+    scale: 1 1;
+  }
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    scale: 0 0;
+  }
+  75% {
+    opacity: 1;
+    scale: 1.1 1.1;
+  }
+  100% {
+    opacity: 1;
+    scale: 1 1;
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes spin {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+@media only screen and (max-width: 894px) {
+  .hero .hero .nav {
+    align-items: center;
+    width: min(950px, 100vw);
+    margin-inline: auto;
+  }
+  .hero .nav :is(.nav__item, ul.nav__links) {
+    display: none;
+  }
+  .hero .yellow-arrow {
+    display: none;
+  }
+  .mobile-menu-button {
+    display: grid;
+  }
+}
+@media only screen and (max-width: 840px) {
+  .hero {
+    background-image: none;
+    padding-bottom: 6rem;
+  }
+  .hero .flex-container {
+    display: block;
+    padding-inline: 1rem;
+    margin-top: 6rem;
+  }
+  .hero .flex-container > section p.intro {
+    letter-spacing: 1px;
+  }
+  .hero .flex-container .hero-image-container {
+    display: none;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .hero .flex-container > section h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    line-height: 62px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .hero {
+    min-height: 85vh;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .hero .nav {
+    justify-content: center;
+  }
+}

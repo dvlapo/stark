@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Stark</title>
+        <link rel="stylesheet" href="./css/main.css" />
+    </head>
+    <body>
+        <header class="hero">
+            <nav class="nav">
+                <a href="/" class="logo">
+                    <img src="./assets/svgs/logo.svg" alt="Stark logo" />
+                </a>
+
+                <ul class="nav__links">
+                    <li class="drop-down">
+                        <span
+                            tabindex="0"
+                            role="tab"
+                            aria-controls="products"
+                            class="nav__item"
+                            >product <ion-icon name="caret-down"></ion-icon
+                        ></span>
+                        <ul
+                            id="products"
+                            tabindex="0"
+                            role="tablist"
+                            aria-expanded="true"
+                        >
+                            <li>
+                                <a href="/"> Stark for Mac </a>
+                                <span class="ff-roboto">new</span>
+                            </li>
+                            <li>
+                                <a href="/">Stark for Figma</a>
+                            </li>
+                            <li><a href="/">Stark for FigJam</a></li>
+                            <li><a href="/">Stark for Sketch</a></li>
+                            <li><a href="/">Stark for Adobe XD</a></li>
+                            <li><a href="/">Stark for Chrome</a></li>
+                            <li><a href="/">Stark for Edge</a></li>
+                            <li>
+                                <a href="/">Stark for Safari</a>
+                                <span class="ff-roboto">new</span>
+                            </li>
+                            <li>
+                                <a href="/">Stark for Arc</a>
+                                <span class="ff-roboto">new</span>
+                            </li>
+                            <li><a href="/">Stark for Brave</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" class="nav__item">pricing</a></li>
+                    <li><a href="" class="nav__item">blog</a></li>
+                    <li><a href="" class="nav__item">library</a></li>
+                    <li><a href="" class="nav__item">support</a></li>
+                </ul>
+
+                <div class="cta-menu-button-container">
+                    <ul class="cta-container">
+                        <li><a href="/" class="nav__item">log in</a></li>
+                        <li>
+                            <a class="cta" href="/">30-Day Free Team Trial</a>
+                        </li>
+                    </ul>
+                    <button
+                        class="mobile-menu-button"
+                        aria-label="Open navigation menu"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                        id="menu-btn"
+                    >
+                        <span class="top line"></span
+                        ><span class="middle line"></span
+                        ><span class="bottom line"></span>
+                    </button>
+                </div>
+            </nav>
+
+            <div class="flex-container">
+                <section>
+                    <p class="intro ff-roboto">
+                        Introducing the all-new stark suite
+                    </p>
+                    <h1>Super­charge Access­ibility</h1>
+                    <p class="body-text">
+                        Tired of manually checking spreadsheets, messy
+                        handovers, and expensive retrofitting? Stark connects
+                        the tools you and your team already use in a streamlined
+                        end-to-end accessibility workflow you actually love.
+                    </p>
+
+                    <div class="ctas">
+                        <a href="/" class="btn btn--yellow"
+                            >Create a free account</a
+                        >
+                        <a href="/" class="btn btn--transparent">Learn more</a>
+                        <img
+                            class="yellow-arrow"
+                            src="/assets/images/homepage__header-yellow-arrow.svg"
+                            alt=""
+                        />
+                    </div>
+                </section>
+
+                <div class="hero-image-container">
+                    <img src="/assets/images/hero-image.webp" alt="" />
+                    <img
+                        class="presentation sparkle"
+                        src="/assets/images/homepage__sparkle.webp"
+                        role="presentation"
+                    />
+                    <img
+                        class="avatar-circle-one"
+                        src="/assets/images/homepage__avatar-circle.webp"
+                        alt=""
+                    />
+                    <img
+                        class="avatar-circle-two"
+                        src="/assets/images/homepage__avatar-circle.webp"
+                        alt=""
+                        role="presentation"
+                    />
+                    <img
+                        class="contrast-bubble"
+                        src="/assets/images/homepage__contrast-bubble.webp"
+                        alt=""
+                        role="presentation"
+                    />
+                    <img
+                        class="alttext-bubble"
+                        src="/assets/images/homepage__alttext-bubble.webp"
+                        alt=""
+                        role="presentation"
+                    />
+                    <img
+                        class="focusorder-bubble"
+                        src="/assets/images/homepage__focusorder-bubble.webp"
+                        alt=""
+                        role="presentation"
+                    />
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="mobile-menu">
+                <a class="main" href="/">log in</a>
+
+                <p class="main">product</p>
+                <ul>
+                    <li><a href="/">Stark for Mac</a></li>
+                    <li><a href="/">Stark for Figma</a></li>
+                    <li><a href="/">Stark for FigJam</a></li>
+                    <li><a href="/">Stark for Sketch</a></li>
+                    <li><a href="/">Stark for AdobeXD</a></li>
+                    <li><a href="/">Stark for Chrome</a></li>
+                    <li><a href="/">Stark for Edge</a></li>
+                    <li><a href="/">Stark for Safari</a></li>
+                    <li><a href="/">Stark for Arc</a></li>
+                    <li><a href="/">Stark for Brave</a></li>
+                </ul>
+                <a class="main" href="/">pricing</a>
+                <a class="main" href="/">blog</a>
+                <a class="main" href="/">library</a>
+                <a class="main" href="/">support</a>
+            </div>
+        </header>
+
+        <div>Second</div>
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+        <script src="./main.js"></script>
+    </body>
+</html>
