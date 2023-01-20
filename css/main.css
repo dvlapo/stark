@@ -21,6 +21,7 @@
 html,
 body {
   height: 100%;
+  background-color: var(--white);
 }
 
 body {
@@ -582,7 +583,7 @@ body {
   }
 }
 @media only screen and (max-width: 894px) {
-  .hero .hero .nav {
+  .hero .nav {
     align-items: center;
     width: min(950px, 100vw);
     margin-inline: auto;
@@ -630,5 +631,99 @@ body {
 @media only screen and (max-width: 420px) {
   .hero .nav {
     justify-content: center;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .hero .nav .cta-menu-button-container {
+    gap: 4px;
+  }
+  .hero .flex-container .ctas .btn {
+    padding-inline: 0.6em;
+  }
+  .hero .flex-container > section h1 {
+    font-size: 3rem;
+  }
+}
+.video-section-container {
+  padding: 7.5rem 20px 0;
+  color: hsl(216deg, 65%, 18%);
+}
+.video-section-container h2 {
+  font-size: clamp(3rem, 0.8vw + 2.8rem, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 62px;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.video-section-container h2 span {
+  position: relative;
+  display: inline-block;
+}
+.video-section-container h2 span svg {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  z-index: -1;
+  scale: 1.1;
+}
+.video-section-container .video-wrapper {
+  max-width: 950px;
+  margin-inline: auto;
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+}
+.video-section-container .video-wrapper .placeholder-image {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+}
+.video-section-container .video-wrapper .placeholder-image svg {
+  position: absolute;
+  z-index: 1;
+  width: min(20%, 80px);
+  cursor: pointer;
+  outline: none;
+}
+.video-section-container .video-wrapper .placeholder-image svg:focus-visible {
+  outline: 4px solid hsl(47deg, 99%, 69%);
+}
+.video-section-container .video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+}
+.video-section-container p {
+  max-width: 734px;
+  margin-inline: auto;
+  margin-block: 3rem;
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.companies-scroll-container {
+  overflow: hidden;
+  margin-block: 6rem;
+}
+.companies-scroll-container > div {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  -webkit-animation: scroll 240s linear infinite;
+          animation: scroll 240s linear infinite;
+}
+
+@-webkit-keyframes scroll {
+  100% {
+    transform: translateX(-5091px);
+  }
+}
+
+@keyframes scroll {
+  100% {
+    transform: translateX(-5091px);
   }
 }

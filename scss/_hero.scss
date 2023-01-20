@@ -4,7 +4,6 @@
     background-size: cover;
     background-color: var(--blue);
     min-height: 100vh;
-    // padding-bottom: 1rem;
     color: var(--white);
     overflow: hidden;
     animation: floatBg 10s ease infinite;
@@ -413,7 +412,7 @@
 
 @media only screen and (max-width: 894px) {
     .hero {
-        .hero .nav {
+        .nav {
             align-items: center;
             width: min(950px, 100vw);
             margin-inline: auto;
@@ -471,5 +470,26 @@
         .nav {
             justify-content: center;
         }
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .hero {
+        .nav {
+            .cta-menu-button-container {
+                gap: 4px;
+            }
+        }
+
+        .flex-container {
+            .ctas {
+                .btn {
+                    padding-inline: 0.6em;
+                }
+            }
+        }
+    }
+    .hero .flex-container > section h1 {
+        font-size: 3rem;
     }
 }

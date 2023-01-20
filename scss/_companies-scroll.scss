@@ -1,0 +1,17 @@
+.companies-scroll-container {
+    overflow: hidden;
+    margin-block: 6rem;
+
+    > div {
+        display: flex;
+        align-items: center;
+        gap: 6rem;
+        animation: scroll 240s linear infinite;
+    }
+}
+
+@keyframes scroll {
+    100% {
+        transform: translateX(-5091px);
+    }
+}

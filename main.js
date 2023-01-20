@@ -15,3 +15,16 @@ menuButton.addEventListener("click", () => {
         mobileMenu.classList.remove("opened");
     }
 });
+
+const playButton = document.querySelector("#play-button");
+const iframe = document.querySelector("iframe");
+const placeholderImage = document.querySelector(".placeholder-image");
+
+playButton.addEventListener("click", playVideo);
+
+function playVideo() {
+    // placeholderImage.style.zIndex = "-2";
+    iframe.style.visibility = "visible";
+    iframe.style.zIndex = "2";
+    iframe.allow = "autoplay";
+}
