@@ -659,6 +659,7 @@ body {
 .video-section-container h2 span {
   position: relative;
   display: inline-block;
+  z-index: 1;
 }
 .video-section-container h2 span svg {
   position: absolute;
