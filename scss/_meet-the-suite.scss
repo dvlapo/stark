@@ -1,0 +1,106 @@
+.meet-the-suite {
+    background-color: $white2;
+    width: 90vw;
+    border-radius: 32px;
+    margin-inline: auto;
+    margin-bottom: 6.5rem;
+    padding: 3rem 1rem 2.5rem;
+    color: $dark-blue;
+    position: relative;
+
+    img.arrow {
+        position: absolute;
+        top: calc(100% - 3rem);
+
+        @media (max-width: 770px) {
+            display: none;
+        }
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .browsers-grid {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        gap: 2rem;
+        row-gap: 3rem;
+        justify-items: center;
+        width: 90%;
+        margin-inline: auto;
+
+        @media (max-width: 770px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+        }
+
+        a {
+            display: inline-grid;
+            justify-items: center;
+            position: relative;
+            width: 15%;
+            color: $dark-blue;
+
+            @media (max-width: 770px) {
+                width: 100%;
+            }
+            img {
+                width: 60%;
+                transition: 300ms;
+            }
+            &:nth-child(1) {
+                img {
+                    width: 73%;
+                }
+                order: 6;
+            }
+            &:nth-child(2) {
+                order: 7;
+            }
+            &:nth-child(3) {
+                order: 8;
+            }
+            &:nth-child(4) {
+                order: 9;
+            }
+            &:nth-child(5) {
+                order: 1;
+            }
+            &:nth-child(6) {
+                order: 2;
+            }
+            &:nth-child(7) {
+                order: 3;
+            }
+            &:nth-child(8) {
+                order: 4;
+            }
+            &:nth-child(9) {
+                order: 5;
+            }
+
+            &:hover img {
+                scale: 1.04;
+            }
+
+            &:nth-child(odd):hover img {
+                rotate: -4deg;
+            }
+
+            &:nth-child(even):hover img {
+                rotate: 4deg;
+            }
+
+            p {
+                margin-top: 1rem;
+                font-weight: 600;
+                font-size: 1rem;
+            }
+        }
+    }
+}

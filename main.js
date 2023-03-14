@@ -16,15 +16,22 @@ menuButton.addEventListener("click", () => {
     }
 });
 
+// Video
 const playButton = document.querySelector("#play-button");
 const iframe = document.querySelector("iframe");
 const placeholderImage = document.querySelector(".placeholder-image");
 
-playButton.addEventListener("click", playVideo);
+placeholderImage.addEventListener("click", playVideo);
 
 function playVideo() {
-    // placeholderImage.style.zIndex = "-2";
     iframe.style.visibility = "visible";
     iframe.style.zIndex = "2";
-    iframe.allow = "autoplay";
+    // iframe.allow = "autoplay";
 }
+
+// Infinite scroll
+const scrollContainer = document.querySelector(".companies-scroll-container");
+const scrollContainerWidth = scrollContainer.getBoundingClientRect().width;
+const scrollEl = document.querySelector(".scroll");
+
+scrollEl.style.setProperty("--width", `-${scrollContainerWidth + 83}px`);

@@ -1,17 +1,25 @@
 .companies-scroll-container {
     overflow: hidden;
     margin-block: 6rem;
+    width: fit-content;
 
     > div {
         display: flex;
         align-items: center;
         gap: 6rem;
-        animation: scroll 240s linear infinite;
+        animation: scroll 100s linear infinite;
+
+        &:hover {
+            animation-play-state: paused;
+        }
     }
 }
 
 @keyframes scroll {
+    0% {
+        transform: translate(0);
+    }
     100% {
-        transform: translateX(-5091px);
+        transform: translateX(var(--width));
     }
 }

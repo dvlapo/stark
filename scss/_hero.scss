@@ -18,7 +18,7 @@
         justify-content: space-between;
         padding: 14px 2rem;
         align-items: center;
-        width: min(1050px, 100vw);
+        width: min(1000px, 100vw);
         margin-inline: auto;
         background-color: $blue;
 
@@ -144,7 +144,7 @@
         margin-inline: auto;
 
         & > section {
-            padding-top: 1.5rem;
+            padding-top: 5rem;
             position: relative;
         }
 
@@ -269,13 +269,13 @@
 
 @keyframes floatBg {
     0% {
-        background-position: 0 50px;
+        background-position: 0 90px;
     }
     50% {
         background-position: 0 0;
     }
     100% {
-        background-position: 0 50px;
+        background-position: 0 90px;
     }
 }
 
@@ -397,7 +397,7 @@
     }
     100% {
         opacity: 1;
-        scale: 1 1;
+        scale: 1.1 1.1;
     }
 }
 
