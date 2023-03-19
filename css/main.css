@@ -933,6 +933,7 @@ body {
   width: 70%;
   scale: 0.85;
   transition: 0.5s;
+  transform-origin: bottom;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 90px;
 }
 @media (max-width: 900px) {
@@ -992,6 +993,7 @@ body {
   width: 70%;
   scale: 0.95;
   transition: 0.5s;
+  transform-origin: bottom;
   box-shadow: none;
 }
 @media (max-width: 900px) {

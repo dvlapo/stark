@@ -44,7 +44,7 @@ window.addEventListener("scroll", checkIntersection);
 checkIntersection();
 
 function checkIntersection() {
-    const triggerBottom = window.innerHeight * 0.8;
+    const triggerBottom = window.innerHeight * 0.7;
 
     animateOnScroll.forEach((anim) => {
         const top = anim.getBoundingClientRect().top;
