@@ -6,20 +6,24 @@
     padding-top: 1.5rem;
     max-width: 1400px;
 
+    @media (min-width: 900px) {
+        align-items: center;
+    }
+
     @media (max-width: 900px) {
         flex-direction: column-reverse;
-        width: 95vw;
+        width: 90vw;
     }
 
     article {
         padding-left: 6rem;
-        padding-top: 1.5rem;
         color: $dark-blue;
         flex-basis: 48%;
         flex-shrink: 0;
 
         @media (max-width: 900px) {
             padding-left: 0;
+            padding-top: 2rem;
         }
         h5 {
             font-weight: 600;
@@ -47,7 +51,7 @@
             line-height: 1.7;
         }
 
-        button.cta-btn {
+        a.cta-btn {
             background-color: $blue;
             color: $white;
             padding: 0.6em 1.5em;
@@ -69,7 +73,7 @@
 
         @media (max-width: 900px) {
             flex-direction: column-reverse;
-            width: 95vw;
+            width: 90vw;
             align-items: center;
         }
 
@@ -80,6 +84,7 @@
 
     .image-backdrop {
         background-color: #96d1c8;
+
         border-radius: 40px;
         position: relative;
         overflow: hidden;
@@ -180,6 +185,68 @@
                 }
                 100% {
                     transform: rotate(5deg);
+                }
+            }
+        }
+
+        &.bg-yellow {
+            background-color: #f0cf5e;
+            border-radius: 40px;
+            overflow: hidden;
+
+            @media (max-width: 900px) {
+                margin-bottom: 0;
+            }
+
+            .img {
+                &-one,
+                &-two {
+                    position: absolute;
+                    width: 70%;
+                    scale: 0.95;
+                    transition: 0.5s;
+                    box-shadow: none;
+                    @media (max-width: 900px) {
+                        scale: 1;
+                    }
+                }
+
+                &-one {
+                    transform: rotate(-3deg);
+                    left: 30px;
+                    top: 10%;
+                }
+                &-two {
+                    top: 20%;
+                    transform: rotate(3deg);
+                    right: -10%;
+
+                    @media (max-width: 900px) {
+                        right: -2%;
+                    }
+                }
+
+                @keyframes spread-left {
+                    0% {
+                        transform: rotate(-2deg);
+                    }
+                    75% {
+                        transform: rotate(-7deg);
+                    }
+                    100% {
+                        transform: rotate(-5deg);
+                    }
+                }
+                @keyframes spread-right {
+                    0% {
+                        transform: rotate(2deg);
+                    }
+                    75% {
+                        transform: rotate(7deg);
+                    }
+                    100% {
+                        transform: rotate(5deg);
+                    }
                 }
             }
         }
