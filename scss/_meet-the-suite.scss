@@ -1,6 +1,7 @@
 .meet-the-suite {
     background-color: $white2;
     width: 90vw;
+    max-width: 1400px;
     border-radius: 32px;
     margin-inline: auto;
     margin-bottom: 6.5rem;
@@ -8,11 +9,15 @@
     color: $dark-blue;
     position: relative;
 
+    @media (max-width: 900px) {
+        width: 95vw;
+    }
+
     img.arrow {
         position: absolute;
-        top: calc(100% - 3rem);
+        top: calc(100% - 5rem);
 
-        @media (max-width: 770px) {
+        @media (max-width: 900px) {
             display: none;
         }
     }

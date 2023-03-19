@@ -1,0 +1,187 @@
+.cta-section {
+    display: flex;
+    gap: 4%;
+    width: 90vw;
+    margin: 5rem auto;
+    padding-top: 1.5rem;
+    max-width: 1400px;
+
+    @media (max-width: 900px) {
+        flex-direction: column-reverse;
+        width: 95vw;
+    }
+
+    article {
+        padding-left: 6rem;
+        padding-top: 1.5rem;
+        color: $dark-blue;
+        flex-basis: 48%;
+        flex-shrink: 0;
+
+        @media (max-width: 900px) {
+            padding-left: 0;
+        }
+        h5 {
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            color: $blue;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 3.4rem;
+            line-height: 1;
+            margin-block: 1rem;
+
+            @media (max-width: 450px) {
+                font-size: 3rem;
+                line-height: 1.1;
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        button.cta-btn {
+            background-color: $blue;
+            color: $white;
+            padding: 0.6em 1.5em;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 300ms;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    &-reverse {
+        flex-direction: row-reverse;
+        width: 100vw;
+        padding-right: 5vw;
+
+        @media (max-width: 900px) {
+            flex-direction: column-reverse;
+            width: 95vw;
+            align-items: center;
+        }
+
+        article {
+            padding-left: 0;
+        }
+    }
+
+    .image-backdrop {
+        background-color: #96d1c8;
+        border-radius: 40px;
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1;
+        flex-basis: 48%;
+        flex-shrink: 0;
+
+        @media (max-width: 900px) {
+            aspect-ratio: 16/12;
+        }
+
+        img {
+            opacity: 0.7;
+            position: absolute;
+            top: 25%;
+            right: -15%;
+            transition: 0.8s ease-out;
+
+            @media (max-width: 900px) {
+                right: -5%;
+            }
+
+            &.in-view {
+                top: 10%;
+                opacity: 1;
+            }
+        }
+    }
+
+    .two-img-wrapper {
+        position: relative;
+        aspect-ratio: 1;
+        flex-basis: 50%;
+        flex-shrink: 0;
+
+        @media (max-width: 900px) {
+            width: 100%;
+            margin-bottom: 10rem;
+        }
+
+        &.in-view {
+            .img-one {
+                animation: spread-left 0.5s ease forwards;
+            }
+            .img-two {
+                animation: spread-right 0.5s ease forwards;
+            }
+        }
+
+        .img {
+            &-one,
+            &-two {
+                position: absolute;
+                width: 70%;
+                scale: 0.85;
+                transition: 0.5s;
+                box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+                    rgba(17, 17, 26, 0.1) 0px 16px 56px,
+                    rgba(17, 17, 26, 0.1) 0px 24px 90px;
+
+                @media (max-width: 900px) {
+                    scale: 1;
+                }
+            }
+
+            &-one {
+                transform: rotate(-3deg);
+                left: -4%;
+                bottom: 0;
+            }
+            &-two {
+                top: -2rem;
+                transform: rotate(3deg);
+                right: 5%;
+
+                @media (max-width: 900px) {
+                    right: -2%;
+                }
+            }
+
+            @keyframes spread-left {
+                0% {
+                    transform: rotate(-2deg);
+                }
+                75% {
+                    transform: rotate(-7deg);
+                }
+                100% {
+                    transform: rotate(-5deg);
+                }
+            }
+            @keyframes spread-right {
+                0% {
+                    transform: rotate(2deg);
+                }
+                75% {
+                    transform: rotate(7deg);
+                }
+                100% {
+                    transform: rotate(5deg);
+                }
+            }
+        }
+    }
+}

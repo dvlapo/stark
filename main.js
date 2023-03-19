@@ -1,3 +1,4 @@
+// Mobile menu
 const menuButton = document.querySelector("#menu-btn");
 const mobileMenu = document.querySelector("#mobile-menu");
 const heroSection = document.querySelector(".hero");
@@ -26,7 +27,6 @@ placeholderImage.addEventListener("click", playVideo);
 function playVideo() {
     iframe.style.visibility = "visible";
     iframe.style.zIndex = "2";
-    // iframe.allow = "autoplay";
 }
 
 // Infinite scroll
@@ -35,3 +35,24 @@ const scrollContainerWidth = scrollContainer.getBoundingClientRect().width;
 const scrollEl = document.querySelector(".scroll");
 
 scrollEl.style.setProperty("--width", `-${scrollContainerWidth + 83}px`);
+
+// Animate on Scroll
+const animateOnScroll = document.querySelectorAll(".animate-on-scroll");
+
+window.addEventListener("scroll", checkIntersection);
+
+checkIntersection();
+
+function checkIntersection() {
+    const triggerBottom = window.innerHeight * 0.8;
+
+    animateOnScroll.forEach((anim) => {
+        const top = anim.getBoundingClientRect().top;
+
+        if (top < triggerBottom) {
+            anim.classList.add("in-view");
+        } else {
+            anim.classList.remove("in-view");
+        }
+    });
+}
