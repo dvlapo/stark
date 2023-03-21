@@ -57,6 +57,7 @@
             img {
                 width: 60%;
                 transition: 300ms;
+                filter: drop-shadow(0 0 4px #787878);
             }
             &:nth-child(1) {
                 img {
